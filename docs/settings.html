@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>تنظیمات - سپه‌یار</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+<div>
+
+<h1>⚙️ تنظیمات</h1>
+
+<p>
+مدیریت تنظیمات سپه‌یار
+</p>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<section class="card">
+
+
+<h2>
+تنظیم محاسبات
+</h2>
+
+
+<label>
+ضریب پیش‌فرض تسهیلات
+</label>
+
+
+<input 
+id="defaultFactor"
+type="number"
+step="0.1"
+value="3">
+
+
+
+<label>
+مدت پیش‌فرض بازپرداخت (ماه)
+</label>
+
+
+<input 
+id="defaultMonths"
+type="number"
+value="36">
+
+
+
+<label>
+کارمزد پیش‌فرض (%)
+</label>
+
+
+<input 
+id="defaultFee"
+type="number"
+step="0.1"
+value="4">
+
+
+
+<button onclick="saveSettings()">
+
+ذخیره تنظیمات
+
+</button>
+
+
+
+<div id="settingMessage" class="result-box">
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+درباره برنامه
+</h2>
+
+
+<p>
+نام برنامه:
+<b>
+سپه‌یار
+</b>
+</p>
+
+
+<p>
+نسخه:
+<b>
+1.0.0
+</b>
+</p>
+
+
+<p>
+طراح و توسعه‌دهنده:
+<br>
+
+<b>
+اسماعیل هاشمی
+</b>
+
+</p>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+منبع و مرجع
+</h2>
+
+
+<p>
+طراحی محاسبات بر اساس الگوهای خدمات بانکی و با الهام از تجربه کاربری سامانه‌های بانکی از جمله امید بانک انجام شده است.
+</p>
+
+
+</section>
+
+
+</main>
+
+
+
+
+
+<nav class="bottom-nav">
+
+
+<a href="index.html">
+🏠
+<br>
+خانه
+</a>
+
+
+<a href="calculator.html">
+🧮
+<br>
+محاسبه
+</a>
+
+
+<a href="customers.html">
+👥
+<br>
+مشتریان
+</a>
+
+
+<a href="contact.html">
+☎
+<br>
+تماس
+</a>
+
+
+</nav>
+
+
+
+
+<script src="app.js"></script>
+
+
+</body>
+
+</html>
