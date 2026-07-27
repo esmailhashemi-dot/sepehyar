@@ -9,6 +9,8 @@
 
 <title>مشتریان - سپه‌یار</title>
 
+<meta name="theme-color" content="#12355b">
+
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -17,27 +19,29 @@
 <body>
 
 
-<header class="header">
+<header class="app-header">
 
-<div>
+<div class="header-title">
 
 <h1>👥 مشتریان</h1>
 
 <p>
-مدیریت پرونده مشتریان
+ثبت و مدیریت اطلاعات مشتریان
 </p>
 
 </div>
+
 
 </header>
 
 
 
 
-<main>
+<main class="container">
 
 
-<section class="card">
+
+<section class="form-card">
 
 
 <h2>
@@ -45,30 +49,71 @@
 </h2>
 
 
-<input 
+
+<label>
+نام و نام خانوادگی
+</label>
+
+
+<input
+
 id="customerName"
+
 type="text"
-placeholder="نام و نام خانوادگی">
+
+placeholder="نام مشتری"
+
+>
 
 
-<input 
+
+
+<label>
+شماره تماس
+</label>
+
+
+<input
+
 id="customerPhone"
+
 type="tel"
-placeholder="شماره تماس">
+
+inputmode="numeric"
+
+placeholder="شماره موبایل"
+
+>
 
 
-<input 
+
+
+<label>
+معدل حساب (ریال)
+</label>
+
+
+<input
+
 id="customerAverage"
-type="number"
-placeholder="معدل حساب (ریال)">
+
+type="text"
+
+inputmode="numeric"
+
+placeholder="مثال: 500,000,000"
+
+>
+
 
 
 
 <button onclick="addCustomer()">
 
-ثبت مشتری
+➕ ثبت مشتری
 
 </button>
+
 
 
 </section>
@@ -77,7 +122,40 @@ placeholder="معدل حساب (ریال)">
 
 
 
-<section class="card">
+
+
+<section class="info-card">
+
+
+<h2>
+جستجوی مشتری
+</h2>
+
+
+
+<input
+
+id="searchCustomer"
+
+type="text"
+
+placeholder="نام مشتری را وارد کنید..."
+
+onkeyup="searchCustomers()"
+
+>
+
+
+
+</section>
+
+
+
+
+
+
+
+<section class="customer-section">
 
 
 <h2>
@@ -85,15 +163,15 @@ placeholder="معدل حساب (ریال)">
 </h2>
 
 
-
-<input 
-id="searchCustomer"
-placeholder="جستجوی مشتری..."
-onkeyup="searchCustomers()">
-
-
-
 <div id="customerList">
+
+
+<p class="empty">
+
+هنوز مشتری ثبت نشده است
+
+</p>
+
 
 </div>
 
@@ -102,7 +180,11 @@ onkeyup="searchCustomers()">
 
 
 
+
+
 </main>
+
+
 
 
 
@@ -113,41 +195,59 @@ onkeyup="searchCustomers()">
 
 <a href="index.html">
 
-🏠
-<br>
+<span>🏠</span>
+
+<label>
 خانه
+</label>
 
 </a>
+
+
 
 
 <a href="calculator.html">
 
-🧮
-<br>
+<span>🧮</span>
+
+<label>
 محاسبه
+</label>
 
 </a>
 
 
-<a href="customers.html">
 
-👥
-<br>
+
+<a href="customers.html" class="active">
+
+<span>👥</span>
+
+<label>
 مشتریان
+</label>
 
 </a>
+
+
+
 
 
 <a href="contact.html">
 
-☎
-<br>
+<span>☎️</span>
+
+<label>
 تماس
+</label>
 
 </a>
 
 
+
 </nav>
+
+
 
 
 
