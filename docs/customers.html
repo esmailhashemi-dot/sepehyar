@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>مشتریان - سپه‌یار</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+<div>
+
+<h1>👥 مشتریان</h1>
+
+<p>
+مدیریت پرونده مشتریان
+</p>
+
+</div>
+
+</header>
+
+
+
+
+<main>
+
+
+<section class="card">
+
+
+<h2>
+ثبت مشتری جدید
+</h2>
+
+
+<input 
+id="customerName"
+type="text"
+placeholder="نام و نام خانوادگی">
+
+
+<input 
+id="customerPhone"
+type="tel"
+placeholder="شماره تماس">
+
+
+<input 
+id="customerAverage"
+type="number"
+placeholder="معدل حساب (ریال)">
+
+
+
+<button onclick="addCustomer()">
+
+ثبت مشتری
+
+</button>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+لیست مشتریان
+</h2>
+
+
+
+<input 
+id="searchCustomer"
+placeholder="جستجوی مشتری..."
+onkeyup="searchCustomers()">
+
+
+
+<div id="customerList">
+
+</div>
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+
+<nav class="bottom-nav">
+
+
+<a href="index.html">
+
+🏠
+<br>
+خانه
+
+</a>
+
+
+<a href="calculator.html">
+
+🧮
+<br>
+محاسبه
+
+</a>
+
+
+<a href="customers.html">
+
+👥
+<br>
+مشتریان
+
+</a>
+
+
+<a href="contact.html">
+
+☎
+<br>
+تماس
+
+</a>
+
+
+</nav>
+
+
+
+
+<script src="app.js"></script>
+
+
+</body>
+
+</html>
