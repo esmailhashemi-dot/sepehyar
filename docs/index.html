@@ -13,44 +13,125 @@
 
 <body>
 
-<header>
+<header class="top">
+
+<div>
 <h1>سپه‌یار</h1>
 <p>دستیار هوشمند محاسبات تسهیلات</p>
+</div>
+
+<div class="profile">
+👤
+</div>
+
 </header>
 
 
-<div class="container">
+<main>
 
 
-<div class="card">
+<section class="welcome card">
 
-<h2>📊 محاسبه معدل حساب</h2>
+<h2>
+سلام، خوش آمدید
+</h2>
 
-<input id="total"
-placeholder="جمع موجودی روزانه (ریال)">
+<p>
+محاسبه سریع معدل حساب و تسهیلات بانک سپه
+</p>
 
-
-<input id="days"
-placeholder="تعداد روز">
-
-
-<button onclick="average()">
-محاسبه معدل
-</button>
+</section>
 
 
-<div id="avgResult" class="result"></div>
+
+<section class="grid">
+
+
+<div class="menu-card"
+onclick="location.href='#calculator'">
+
+<div class="icon">
+🧮
+</div>
+
+<h3>
+محاسبه وام
+</h3>
+
+<p>
+معدل و تسهیلات
+</p>
 
 </div>
 
 
 
-<div class="card">
+<div class="menu-card">
 
-<h2>💰 محاسبه تسهیلات</h2>
+<div class="icon">
+👥
+</div>
+
+<h3>
+مشتریان
+</h3>
+
+<p>
+مدیریت پرونده‌ها
+</p>
+
+</div>
 
 
-<input id="avg"
+
+<div class="menu-card">
+
+<div class="icon">
+📊
+</div>
+
+<h3>
+داشبورد
+</h3>
+
+<p>
+گزارش عملکرد
+</p>
+
+</div>
+
+
+
+<div class="menu-card">
+
+<div class="icon">
+⚙️
+</div>
+
+<h3>
+تنظیمات
+</h3>
+
+<p>
+طرح‌های تسهیلات
+</p>
+
+</div>
+
+
+</section>
+
+
+
+<section id="calculator" class="card">
+
+
+<h2>
+🧮 محاسبه تسهیلات
+</h2>
+
+
+<input id="average"
 placeholder="معدل حساب (ریال)">
 
 
@@ -61,40 +142,80 @@ placeholder="ضریب">
 
 <input id="months"
 value="36"
-placeholder="تعداد ماه">
+placeholder="مدت بازپرداخت">
 
 
-<button onclick="loan()">
-محاسبه وام
+<button onclick="calculate()">
+
+محاسبه
+
 </button>
 
 
-<div id="loanResult" class="result"></div>
-
+<div id="result"
+class="result">
 
 </div>
 
 
+</section>
 
-<div class="card">
 
-<h2>👤 درباره برنامه</h2>
+<section class="card contact">
+
+<h3>
+☎ تماس با ما
+</h3>
 
 <p>
-سپه‌یار - نسخه آزمایشی
+بانک سپه - شعبه ولیعصر گچساران
 </p>
 
 <p>
 طراح:
-<br>
-<b>اسماعیل هاشمی</b>
+<b>
+اسماعیل هاشمی
+</b>
 </p>
 
-</div>
+</section>
+
+
+</main>
 
 
 
-</div>
+<nav class="bottom-menu">
+
+<a>
+🏠
+<br>
+خانه
+</a>
+
+
+<a>
+🧮
+<br>
+محاسبه
+</a>
+
+
+<a>
+👥
+<br>
+مشتریان
+</a>
+
+
+<a>
+☎
+<br>
+تماس
+</a>
+
+</nav>
+
 
 
 <script src="app.js"></script>
