@@ -9,6 +9,8 @@
 
 <title>داشبورد - سپه‌یار</title>
 
+<meta name="theme-color" content="#12355b">
+
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -17,9 +19,9 @@
 <body>
 
 
-<header class="header">
+<header class="app-header">
 
-<div>
+<div class="header-title">
 
 <h1>📊 داشبورد</h1>
 
@@ -29,14 +31,19 @@
 
 </div>
 
+
 </header>
 
 
 
-<main>
+
+
+<main class="container">
+
 
 
 <section class="stats-grid">
+
 
 
 <div class="stat-card">
@@ -46,14 +53,20 @@
 </div>
 
 <h3>
-تعداد مشتریان
+مشتریان
 </h3>
 
 <strong id="customerCount">
-0
+۰
 </strong>
 
+<p>
+ثبت شده
+</p>
+
 </div>
+
+
 
 
 
@@ -64,14 +77,19 @@
 </div>
 
 <h3>
-تعداد محاسبات
+محاسبات
 </h3>
 
 <strong id="calculateCount">
-0
+۰
 </strong>
 
+<p>
+انجام شده
+</p>
+
 </div>
+
 
 
 
@@ -87,10 +105,16 @@
 </h3>
 
 <strong id="lastLoan">
-0 ریال
+۰ ریال
 </strong>
 
+<p>
+آخرین مبلغ
+</p>
+
 </div>
+
+
 
 
 
@@ -108,7 +132,12 @@
 فعال
 </strong>
 
+<p>
+PWA
+</p>
+
 </div>
+
 
 
 
@@ -118,7 +147,10 @@
 
 
 
-<section class="card">
+
+
+
+<section class="info-card">
 
 
 <h2>
@@ -126,11 +158,16 @@
 </h2>
 
 
+
 <div id="activityList">
 
-<p>
-هنوز فعالیتی ثبت نشده است.
+
+<p class="empty">
+
+هنوز فعالیتی ثبت نشده است
+
 </p>
+
 
 
 </div>
@@ -142,21 +179,33 @@
 
 
 
-<section class="card">
 
 
-<h3>
-سپه‌یار نسخه 1.0
-</h3>
+<section class="info-card">
+
+
+<h2>
+درباره سپه‌یار
+</h2>
 
 
 <p>
 
-طراحی و توسعه:
+نسخه:
+<strong>
+1.0.2
+</strong>
 
-<b>
+</p>
+
+
+<p>
+
+طراح و توسعه‌دهنده:
+
+<strong>
 اسماعیل هاشمی
-</b>
+</strong>
 
 </p>
 
@@ -165,7 +214,10 @@
 
 
 
+
 </main>
+
+
 
 
 
@@ -176,41 +228,60 @@
 
 <a href="index.html">
 
-🏠
-<br>
+<span>🏠</span>
+
+<label>
 خانه
+</label>
 
 </a>
+
+
 
 
 <a href="calculator.html">
 
-🧮
-<br>
+<span>🧮</span>
+
+<label>
 محاسبه
+</label>
 
 </a>
+
+
 
 
 <a href="customers.html">
 
-👥
-<br>
+<span>👥</span>
+
+<label>
 مشتریان
+</label>
 
 </a>
+
+
+
 
 
 <a href="contact.html">
 
-☎
-<br>
+<span>☎️</span>
+
+<label>
 تماس
+</label>
 
 </a>
 
 
+
 </nav>
+
+
+
 
 
 
@@ -220,13 +291,14 @@
 
 <script>
 
-window.onload=function(){
+window.addEventListener("load",()=>{
 
 loadDashboard();
 
-}
+});
 
 </script>
+
 
 
 </body>
