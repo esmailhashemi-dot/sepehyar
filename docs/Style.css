@@ -1,54 +1,277 @@
+/* =========================
+   سپه‌یار - Main Style
+   Version 1.0
+========================= */
+
+
+*{
+    box-sizing:border-box;
+}
+
+
 body{
 
-font-family:tahoma;
-background:#f1f5f9;
-margin:0;
-padding:20px;
+    margin:0;
+
+    padding-bottom:90px;
+
+    background:#f4f6fa;
+
+    color:#222;
+
+    font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
 
 }
 
 
-header{
 
-background:#12355b;
-color:white;
-padding:20px;
-border-radius:20px;
-text-align:center;
+/* Header */
+
+.header{
+
+    background:
+    linear-gradient(135deg,#12355b,#1d6fa5);
+
+    color:white;
+
+    padding:25px 20px;
+
+    border-radius:0 0 35px 35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.15);
 
 }
 
 
 
-.container{
+.header h1{
 
-max-width:500px;
-margin:auto;
+    margin:0;
+
+    font-size:26px;
 
 }
 
+
+
+.header p{
+
+    margin-top:8px;
+
+    opacity:.9;
+
+}
+
+
+
+
+.user-icon{
+
+    background:white;
+
+    color:#12355b;
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:25px;
+
+}
+
+
+
+
+/* Main */
+
+main{
+
+    max-width:650px;
+
+    margin:auto;
+
+    padding:15px;
+
+}
+
+
+
+/* Cards */
 
 
 .card{
 
-background:white;
-padding:20px;
-margin:20px 0;
-border-radius:20px;
-box-shadow:0 5px 15px #ccc;
+    background:white;
+
+    padding:20px;
+
+    margin:15px 0;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,.08);
 
 }
 
 
 
-input{
 
-width:100%;
-padding:12px;
-margin:8px 0;
-border-radius:10px;
-border:1px solid #ddd;
-font-size:16px;
+.hero{
+
+    text-align:center;
+
+}
+
+
+
+.hero h2{
+
+    color:#12355b;
+
+}
+
+
+
+
+/* Menu */
+
+
+.menu-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+
+
+.menu-card{
+
+    background:white;
+
+    text-decoration:none;
+
+    color:#12355b;
+
+    text-align:center;
+
+    padding:25px 10px;
+
+    border-radius:25px;
+
+    transition:.3s;
+
+    box-shadow:
+
+    0 5px 15px rgba(0,0,0,.08);
+
+}
+
+
+
+.menu-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+.menu-card span{
+
+    font-size:40px;
+
+}
+
+
+
+.menu-card h3{
+
+    margin:12px 0 5px;
+
+}
+
+
+
+.menu-card p{
+
+    font-size:13px;
+
+    color:#777;
+
+}
+
+
+
+
+/* Form */
+
+
+label{
+
+    display:block;
+
+    margin-top:15px;
+
+    color:#555;
+
+}
+
+
+
+input,
+select{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:8px;
+
+    border-radius:15px;
+
+    border:
+
+    1px solid #ddd;
+
+    font-size:16px;
+
+    background:#fafafa;
+
+}
+
+
+
+input:focus{
+
+    outline:none;
+
+    border-color:#1d6fa5;
 
 }
 
@@ -56,25 +279,50 @@ font-size:16px;
 
 button{
 
-width:100%;
-padding:13px;
-background:#12355b;
-color:white;
-border:0;
-border-radius:10px;
-font-size:16px;
+    width:100%;
+
+    padding:15px;
+
+    margin-top:15px;
+
+    border:0;
+
+    border-radius:15px;
+
+    background:#12355b;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
 
 }
 
 
 
-.result{
+button:hover{
 
-margin-top:15px;
-background:#e6f0ff;
-padding:15px;
-border-radius:10px;
-font-weight:bold;
-color:#12355b;
+    background:#1d6fa5;
 
 }
+
+
+
+
+/* Result */
+
+
+.result-box{
+
+    margin-top:20px;
+
+    background:#edf5ff;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    color:#12355b;
+
+    line-height:
