@@ -9,6 +9,8 @@
 
 <title>تماس با ما - سپه‌یار</title>
 
+<meta name="theme-color" content="#12355b">
+
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -17,30 +19,35 @@
 <body>
 
 
-<header class="header">
+<header class="app-header">
 
-<div>
+<div class="header-title">
 
 <h1>☎️ تماس با ما</h1>
 
 <p>
-ارتباط با سپه‌یار
+درباره سپه‌یار
 </p>
 
 </div>
+
 
 </header>
 
 
 
 
-<main>
+
+<main class="container">
 
 
-<section class="card contact-card">
 
 
-<div class="logo-box">
+
+<section class="profile-card">
+
+
+<div class="app-logo">
 
 🏦
 
@@ -57,32 +64,91 @@
 </p>
 
 
-
-<hr>
-
+</section>
 
 
-<h3>
-اطلاعات برنامه
-</h3>
+
+
+
+
+
+
+<section class="info-card">
+
+
+<h2>
+👤 درباره توسعه‌دهنده
+</h2>
+
+
+
+<p>
+
+طراح و توسعه‌دهنده:
+
+<br>
+
+<strong>
+اسماعیل هاشمی
+</strong>
+
+</p>
+
+
+<p>
+
+هدف از طراحی سپه‌یار، ساده‌سازی فرآیند محاسبات تسهیلات، مدیریت مشتریان و افزایش سرعت دسترسی به ابزارهای بانکی است.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="info-card">
+
+
+<h2>
+🏦 اطلاعات برنامه
+</h2>
+
+
+<p>
+نام:
+<strong>
+سپه‌یار
+</strong>
+</p>
 
 
 <p>
 نسخه:
-<b>
-1.0.0
-</b>
+<strong>
+1.0.2
+</strong>
 </p>
 
 
 <p>
-طراح و توسعه‌دهنده:
-<br>
-
-<b>
-اسماعیل هاشمی</b>
+نوع برنامه:
+<strong>
+PWA
+</strong>
 </p>
 
+
+<p>
+وضعیت:
+<strong>
+آماده تبدیل به APK
+</strong>
+</p>
 
 
 </section>
@@ -91,23 +157,45 @@
 
 
 
-<section class="card">
 
 
-<h3>
-🏦 اطلاعات بانکی
-</h3>
+<section class="info-card">
 
 
-<p>
-بانک سپه
-</p>
+<h2>
+📌 امکانات فعلی
+</h2>
 
 
-<p>
-شعبه ولیعصر گچساران
-</p>
+<ul class="feature-list">
 
+
+<li>
+محاسبه هوشمند تسهیلات
+</li>
+
+
+<li>
+مدیریت و جستجوی مشتریان
+</li>
+
+
+<li>
+ذخیره اطلاعات روی دستگاه
+</li>
+
+
+<li>
+داشبورد آماری
+</li>
+
+
+<li>
+قابلیت نصب مانند اپلیکیشن
+</li>
+
+
+</ul>
 
 
 </section>
@@ -116,46 +204,39 @@
 
 
 
-<section class="card">
 
 
-<h3>
-درباره سپه‌یار
-</h3>
+<section class="info-card">
 
 
-<p>
-
-این برنامه برای ساده‌سازی محاسبات تسهیلات، مدیریت اطلاعات مشتریان و ایجاد دسترسی سریع به ابزارهای بانکی طراحی شده است.
-
-</p>
-
-
-</section>
-
-
-
-
-<section class="card">
-
-
-<h3>
+<h2>
 پشتیبانی
-</h3>
+</h2>
 
 
-<button onclick="alert('در نسخه بعدی بخش پشتیبانی آنلاین اضافه می‌شود')">
+<button onclick="showSupport()">
 
 ارتباط با پشتیبانی
 
 </button>
 
 
+
+<div id="supportMessage" class="result-box">
+
+</div>
+
+
 </section>
 
 
 
+
+
+
 </main>
+
+
 
 
 
@@ -166,41 +247,77 @@
 
 <a href="index.html">
 
-🏠
-<br>
+<span>🏠</span>
+
+<label>
 خانه
+</label>
 
 </a>
+
+
 
 
 <a href="calculator.html">
 
-🧮
-<br>
+<span>🧮</span>
+
+<label>
 محاسبه
+</label>
 
 </a>
+
+
 
 
 <a href="customers.html">
 
-👥
-<br>
+<span>👥</span>
+
+<label>
 مشتریان
+</label>
 
 </a>
 
 
-<a href="contact.html">
 
-☎
-<br>
+
+<a href="contact.html" class="active">
+
+<span>☎️</span>
+
+<label>
 تماس
+</label>
 
 </a>
+
 
 
 </nav>
+
+
+
+
+
+
+
+<script src="app.js"></script>
+
+
+<script>
+
+function showSupport(){
+
+document.getElementById("supportMessage").innerHTML=
+
+"بخش پشتیبانی آنلاین در نسخه‌های بعدی فعال خواهد شد.";
+
+}
+
+</script>
 
 
 
