@@ -9,46 +9,46 @@
 
 <title>سپه‌یار</title>
 
+<meta name="theme-color" content="#12355b">
+
 <link rel="manifest" href="manifest.json">
 
 <link rel="stylesheet" href="style.css">
-<meta name="theme-color" content="#12355b">
 
-<meta name="mobile-web-app-capable" content="yes">
 </head>
 
 
 <body>
 
 
-<header class="header">
+<header class="app-header">
 
 <div>
 
 <h1>🏦 سپه‌یار</h1>
 
 <p>
-دستیار هوشمند محاسبات تسهیلات
+دستیار هوشمند خدمات بانکی
 </p>
 
 </div>
 
 
-<div class="user-icon">
+<div class="profile">
 
 👤
 
 </div>
 
-
 </header>
 
 
 
-<main>
+<main class="container">
 
 
-<section class="hero card">
+
+<section class="welcome-card">
 
 <h2>
 خوش آمدید
@@ -56,7 +56,7 @@
 
 
 <p>
-مدیریت سریع محاسبات و پرونده مشتریان
+مدیریت محاسبات تسهیلات و مشتریان
 </p>
 
 
@@ -65,41 +65,44 @@
 
 
 
+
 <section class="menu-grid">
+
 
 
 <a href="calculator.html" class="menu-card">
 
-<span>
+<div class="icon">
 🧮
-</span>
+</div>
 
 <h3>
 محاسبه تسهیلات
 </h3>
 
-<p>
-معدل، وام و اقساط
-</p>
+<span>
+وام و اقساط
+</span>
 
 </a>
 
 
 
 
+
 <a href="customers.html" class="menu-card">
 
-<span>
+<div class="icon">
 👥
-</span>
+</div>
 
 <h3>
 مشتریان
 </h3>
 
-<p>
-ثبت و مدیریت مشتری
-</p>
+<span>
+ثبت و مدیریت
+</span>
 
 </a>
 
@@ -109,17 +112,17 @@
 
 <a href="dashboard.html" class="menu-card">
 
-<span>
+<div class="icon">
 📊
-</span>
+</div>
 
 <h3>
 داشبورد
 </h3>
 
-<p>
+<span>
 گزارش عملکرد
-</p>
+</span>
 
 </a>
 
@@ -129,36 +132,37 @@
 
 <a href="settings.html" class="menu-card">
 
-<span>
+<div class="icon">
 ⚙️
-</span>
+</div>
 
 <h3>
 تنظیمات
 </h3>
 
-<p>
-تنظیم برنامه
-</p>
+<span>
+مدیریت برنامه
+</span>
 
 </a>
 
 
 
 
+
 <a href="contact.html" class="menu-card">
 
-<span>
+<div class="icon">
 ☎️
-</span>
+</div>
 
 <h3>
-تماس با ما
+تماس
 </h3>
 
-<p>
-بانک سپه
-</p>
+<span>
+درباره سپه‌یار
+</span>
 
 </a>
 
@@ -170,8 +174,7 @@
 
 
 
-<section class="card info">
-
+<section class="info-card">
 
 <h3>
 درباره سپه‌یار
@@ -180,7 +183,7 @@
 
 <p>
 
-نسخه آزمایشی سامانه محاسبات مالی
+نسخه آزمایشی سامانه هوشمند محاسبات تسهیلات
 
 </p>
 
@@ -188,9 +191,9 @@
 <p>
 
 طراح:
-<b>
+<strong>
 اسماعیل هاشمی
-</b>
+</strong>
 
 </p>
 
@@ -208,11 +211,11 @@
 <nav class="bottom-nav">
 
 
-<a href="index.html">
+<a href="index.html" class="active">
 
+<span>
 🏠
-
-<br>
+</span>
 
 خانه
 
@@ -222,9 +225,9 @@
 
 <a href="calculator.html">
 
+<span>
 🧮
-
-<br>
+</span>
 
 محاسبه
 
@@ -232,12 +235,11 @@
 
 
 
-
 <a href="customers.html">
 
+<span>
 👥
-
-<br>
+</span>
 
 مشتریان
 
@@ -245,12 +247,11 @@
 
 
 
-
 <a href="contact.html">
 
-☎
-
-<br>
+<span>
+☎️
+</span>
 
 تماس
 
@@ -264,13 +265,16 @@
 
 <script>
 
-if('serviceWorker' in navigator){
+if ("serviceWorker" in navigator) {
 
-navigator.serviceWorker.register('service-worker.js');
+navigator.serviceWorker.register(
+"service-worker.js"
+);
 
 }
 
 </script>
+
 
 
 </body>
