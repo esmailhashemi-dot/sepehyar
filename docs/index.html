@@ -2,93 +2,114 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>سپه‌یار</title>
+
+<link rel="manifest" href="manifest.json">
 
 <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
 
-<header class="top">
+
+<header class="header">
 
 <div>
-<h1>سپه‌یار</h1>
-<p>دستیار هوشمند محاسبات تسهیلات</p>
+
+<h1>🏦 سپه‌یار</h1>
+
+<p>
+دستیار هوشمند محاسبات تسهیلات
+</p>
+
 </div>
 
-<div class="profile">
+
+<div class="user-icon">
+
 👤
+
 </div>
+
 
 </header>
+
 
 
 <main>
 
 
-<section class="welcome card">
+<section class="hero card">
 
 <h2>
-سلام، خوش آمدید
+خوش آمدید
 </h2>
 
+
 <p>
-محاسبه سریع معدل حساب و تسهیلات بانک سپه
+مدیریت سریع محاسبات و پرونده مشتریان
 </p>
+
 
 </section>
 
 
 
-<section class="grid">
+
+<section class="menu-grid">
 
 
-<div class="menu-card"
-onclick="location.href='#calculator'">
+<a href="calculator.html" class="menu-card">
 
-<div class="icon">
+<span>
 🧮
-</div>
+</span>
 
 <h3>
-محاسبه وام
+محاسبه تسهیلات
 </h3>
 
 <p>
-معدل و تسهیلات
+معدل، وام و اقساط
 </p>
 
-</div>
+</a>
 
 
 
-<div class="menu-card">
 
-<div class="icon">
+<a href="customers.html" class="menu-card">
+
+<span>
 👥
-</div>
+</span>
 
 <h3>
 مشتریان
 </h3>
 
 <p>
-مدیریت پرونده‌ها
+ثبت و مدیریت مشتری
 </p>
 
-</div>
+</a>
 
 
 
-<div class="menu-card">
 
-<div class="icon">
+
+<a href="dashboard.html" class="menu-card">
+
+<span>
 📊
-</div>
+</span>
 
 <h3>
 داشبورد
@@ -98,127 +119,157 @@ onclick="location.href='#calculator'">
 گزارش عملکرد
 </p>
 
-</div>
+</a>
 
 
 
-<div class="menu-card">
 
-<div class="icon">
+
+<a href="settings.html" class="menu-card">
+
+<span>
 ⚙️
-</div>
+</span>
 
 <h3>
 تنظیمات
 </h3>
 
 <p>
-طرح‌های تسهیلات
+تنظیم برنامه
 </p>
 
-</div>
-
-
-</section>
+</a>
 
 
 
-<section id="calculator" class="card">
 
+<a href="contact.html" class="menu-card">
 
-<h2>
-🧮 محاسبه تسهیلات
-</h2>
-
-
-<input id="average"
-placeholder="معدل حساب (ریال)">
-
-
-<input id="factor"
-value="3"
-placeholder="ضریب">
-
-
-<input id="months"
-value="36"
-placeholder="مدت بازپرداخت">
-
-
-<button onclick="calculate()">
-
-محاسبه
-
-</button>
-
-
-<div id="result"
-class="result">
-
-</div>
-
-
-</section>
-
-
-<section class="card contact">
+<span>
+☎️
+</span>
 
 <h3>
-☎ تماس با ما
+تماس با ما
 </h3>
 
 <p>
-بانک سپه - شعبه ولیعصر گچساران
+بانک سپه
 </p>
 
+</a>
+
+
+
+</section>
+
+
+
+
+
+<section class="card info">
+
+
+<h3>
+درباره سپه‌یار
+</h3>
+
+
 <p>
+
+نسخه آزمایشی سامانه محاسبات مالی
+
+</p>
+
+
+<p>
+
 طراح:
 <b>
 اسماعیل هاشمی
 </b>
+
 </p>
 
+
 </section>
+
 
 
 </main>
 
 
 
-<nav class="bottom-menu">
 
-<a>
+
+<nav class="bottom-nav">
+
+
+<a href="index.html">
+
 🏠
+
 <br>
+
 خانه
+
 </a>
 
 
-<a>
+
+<a href="calculator.html">
+
 🧮
+
 <br>
+
 محاسبه
+
 </a>
 
 
-<a>
+
+
+<a href="customers.html">
+
 👥
+
 <br>
+
 مشتریان
+
 </a>
 
 
-<a>
+
+
+<a href="contact.html">
+
 ☎
+
 <br>
+
 تماس
+
 </a>
+
 
 </nav>
 
 
 
-<script src="app.js"></script>
+
+<script>
+
+if('serviceWorker' in navigator){
+
+navigator.serviceWorker.register('service-worker.js');
+
+}
+
+</script>
+
 
 </body>
 
