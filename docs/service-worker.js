@@ -1,23 +1,25 @@
-const CACHE_NAME = "sepehyar-v1";
+const CACHE_NAME = "sepehyar-v1.0";
 
 
-const FILES = [
+const APP_FILES = [
 
-"index.html",
+"./",
 
-"calculator.html",
+"./index.html",
 
-"customers.html",
+"./calculator.html",
 
-"dashboard.html",
+"./customers.html",
 
-"settings.html",
+"./dashboard.html",
 
-"contact.html",
+"./settings.html",
 
-"style.css",
+"./contact.html",
 
-"app.js"
+"./style.css",
+
+"./app.js"
 
 ];
 
@@ -33,15 +35,47 @@ caches.open(CACHE_NAME)
 
 .then(cache => {
 
-return cache.addAll(FILES);
+return cache.addAll(APP_FILES);
 
 })
 
 );
 
+});
+
+
+
+
+self.addEventListener(
+"activate",
+event => {
+
+event.waitUntil(
+
+caches.keys()
+
+.then(keys =>
+
+Promise.all(
+
+keys.map(key => {
+
+if(key !== CACHE_NAME){
+
+return caches.delete(key);
+
 }
 
+})
+
+)
+
+)
+
 );
+
+});
+
 
 
 
@@ -49,22 +83,16 @@ self.addEventListener(
 "fetch",
 event => {
 
-
 event.respondWith(
 
 caches.match(event.request)
 
 .then(response => {
 
-
-return response ||
-
-fetch(event.request);
-
+return response || fetch(event.request);
 
 })
 
 );
-
 
 });
