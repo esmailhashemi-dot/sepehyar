@@ -1,16 +1,45 @@
 /* =================================
-   سپه‌یار - Application Engine
-   Version 1.0
+   Sepehyar v1.0.2
+   Application Engine
 ================================= */
 
 
-/* تبدیل عدد به ریال فارسی */
+
+// تبدیل عدد به فرمت بانکی
+
+function formatNumber(value){
+
+    if(value === "" || value === null){
+        return "";
+    }
+
+    value = value.toString().replace(/,/g,'');
+
+    if(isNaN(value)){
+        return "";
+    }
+
+    return Number(value).toLocaleString('en-US');
+
+}
+
+
+
+// تبدیل به عدد واقعی
+
+function cleanNumber(value){
+
+    return Number(
+        value.toString().replace(/,/g,'')
+    ) || 0;
+
+}
+
+
+
+// نمایش ریال
 
 function formatRial(value){
-
-    if(!value || isNaN(value)){
-        return "۰ ریال";
-    }
 
     return Number(value)
     .toLocaleString('fa-IR')
@@ -20,7 +49,47 @@ function formatRial(value){
 
 
 
-/* ================================
+
+
+// فرمت خودکار هنگام تایپ
+
+function enableNumberFormat(id){
+
+    let input=document.getElementById(id);
+
+
+    if(!input){
+        return;
+    }
+
+
+
+    input.addEventListener("input",function(){
+
+
+        let position=this.selectionStart;
+
+
+        this.value=formatNumber(this.value);
+
+
+
+        this.setSelectionRange(
+            position,
+            position
+        );
+
+
+    });
+
+
+}
+
+
+
+
+
+/* ===============================
    محاسبه تسهیلات
 ================================ */
 
@@ -28,25 +97,32 @@ function formatRial(value){
 function calculateLoan(){
 
 
-    let average =
-    Number(
+    let average=
+
+    cleanNumber(
         document.getElementById("average").value
     );
 
 
-    let factor =
+
+    let factor=
+
     Number(
         document.getElementById("factor").value
     );
 
 
-    let months =
+
+    let months=
+
     Number(
         document.getElementById("months").value
     );
 
 
-    let fee =
+
+    let fee=
+
     Number(
         document.getElementById("fee").value
     );
@@ -63,99 +139,80 @@ function calculateLoan(){
 
 
 
-    let loanAmount =
+    let loan=
+
     average * factor;
 
 
 
-    let feeAmount =
-    loanAmount * (fee / 100);
+    let feeAmount=
+
+    loan * fee /100;
 
 
 
-    let totalAmount =
-    loanAmount + feeAmount;
+    let total=
+
+    loan + feeAmount;
 
 
 
-    let installment =
-    totalAmount / months;
+    let installment=
+
+    total / months;
 
 
 
-    let result =
+    document.getElementById("loanResult").innerHTML=
 
     `
     مبلغ تسهیلات:
     <br>
-    <b>${formatRial(loanAmount)}</b>
+    ${formatRial(loan)}
 
     <br><br>
 
     کارمزد:
     <br>
-    <b>${formatRial(feeAmount)}</b>
+    ${formatRial(feeAmount)}
 
     <br><br>
 
     مبلغ کل بازپرداخت:
     <br>
-    <b>${formatRial(totalAmount)}</b>
+    ${formatRial(total)}
 
     <br><br>
 
     قسط ماهانه:
     <br>
-    <b>${formatRial(installment)}</b>
+    ${formatRial(installment)}
 
     `;
 
 
 
-    document.getElementById("loanResult")
-    .innerHTML=result;
+    localStorage.lastLoan=loan;
 
 
+    let count=
 
-    saveCalculation(loanAmount);
-
-
-
-}
-
-
-
-
-/* ================================
- ذخیره آخرین محاسبات
-================================ */
-
-
-function saveCalculation(amount){
-
-
-    let count =
-    Number(
-        localStorage.calculateCount || 0
-    );
-
-
-    count++;
+    Number(localStorage.calculateCount || 0)+1;
 
 
     localStorage.calculateCount=count;
 
 
-    localStorage.lastLoan=amount;
-
-
 }
 
 
 
 
-/* ================================
- مشتریان
+
+
+
+/* ===============================
+   مشتریان
 ================================ */
 
 
@@ -169,8 +226,8 @@ function getCustomers(){
 
     );
 
-}
 
+}
 
 
 
@@ -178,16 +235,25 @@ function getCustomers(){
 function addCustomer(){
 
 
-    let name =
+    let name=
+
     document.getElementById("customerName").value;
 
 
-    let phone =
+
+    let phone=
+
     document.getElementById("customerPhone").value;
 
 
-    let average =
-    document.getElementById("customerAverage").value;
+
+    let average=
+
+    cleanNumber(
+
+    document.getElementById("customerAverage").value
+
+    );
 
 
 
@@ -219,12 +285,13 @@ function addCustomer(){
 
 
 
-    localStorage.customers =
+    localStorage.customers=
+
     JSON.stringify(customers);
 
 
 
-    alert("مشتری ثبت شد");
+    alert("مشتری با موفقیت ثبت شد");
 
 
 
@@ -244,18 +311,20 @@ function addCustomer(){
 
 
 
+
+
+
 function showCustomers(){
 
 
-    let box =
+    let box=
+
     document.getElementById("customerList");
 
 
 
     if(!box){
-
         return;
-
     }
 
 
@@ -271,7 +340,8 @@ function showCustomers(){
     if(customers.length===0){
 
         box.innerHTML=
-        "<p>مشتری ثبت نشده است</p>";
+
+        "<p class='empty'>مشتری ثبت نشده است</p>";
 
         return;
 
@@ -279,30 +349,31 @@ function showCustomers(){
 
 
 
-    customers.forEach(customer=>{
+
+    customers.forEach(c=>{
 
 
         box.innerHTML +=
 
         `
 
-        <div class="card">
+        <div class="customer-item">
 
-        <b>${customer.name}</b>
-
-        <br>
-
-        📞 ${customer.phone}
-
-        <br>
-
-        💰 ${formatRial(customer.average)}
+        👤 <b>${c.name}</b>
 
         <br><br>
 
-        <button onclick="deleteCustomer(${customer.id})">
+        📞 ${c.phone || "-"}
 
-        حذف
+        <br>
+
+        💰 ${formatRial(c.average)}
+
+        <br><br>
+
+        <button onclick="deleteCustomer(${c.id})">
+
+        حذف مشتری
 
         </button>
 
@@ -311,12 +382,13 @@ function showCustomers(){
         `;
 
 
-
     });
 
 
-
 }
+
+
+
 
 
 
@@ -327,16 +399,14 @@ function deleteCustomer(id){
     let customers=getCustomers();
 
 
-    customers =
-    customers.filter(
+    customers=
 
-        c=>c.id!==id
-
-    );
+    customers.filter(c=>c.id!==id);
 
 
 
-    localStorage.customers =
+    localStorage.customers=
+
     JSON.stringify(customers);
 
 
@@ -350,14 +420,15 @@ function deleteCustomer(id){
 
 
 
+
+
+
 function searchCustomers(){
 
 
-    let text =
+    let text=
 
-    document
-    .getElementById("searchCustomer")
-    .value;
+    document.getElementById("searchCustomer").value;
 
 
 
@@ -365,17 +436,25 @@ function searchCustomers(){
 
 
 
-    let result =
+    let result=
+
     customers.filter(c=>
 
-        c.name.includes(text)
+    c.name.includes(text)
 
     );
 
 
 
-    let box =
+    let box=
+
     document.getElementById("customerList");
+
+
+
+    if(!box){
+        return;
+    }
 
 
 
@@ -390,13 +469,13 @@ function searchCustomers(){
 
         `
 
-        <div class="card">
+        <div class="customer-item">
 
-        <b>${c.name}</b>
+        👤 ${c.name}
 
         <br>
 
-        📞 ${c.phone}
+        📞 ${c.phone || "-"}
 
         </div>
 
@@ -411,37 +490,38 @@ function searchCustomers(){
 
 
 
-/* ================================
- تنظیمات
+
+
+/* ===============================
+   تنظیمات
 ================================ */
 
 
 function saveSettings(){
 
 
-    localStorage.defaultFactor =
+localStorage.defaultFactor=
 
-    document.getElementById("defaultFactor").value;
-
-
-
-    localStorage.defaultMonths =
-
-    document.getElementById("defaultMonths").value;
+document.getElementById("defaultFactor").value;
 
 
 
-    localStorage.defaultFee =
+localStorage.defaultMonths=
 
-    document.getElementById("defaultFee").value;
+document.getElementById("defaultMonths").value;
 
 
 
-    document.getElementById("settingMessage")
+localStorage.defaultFee=
 
-    .innerHTML=
+document.getElementById("defaultFee").value;
 
-    "✅ تنظیمات ذخیره شد";
+
+
+document.getElementById("settingMessage").innerHTML=
+
+"✅ تنظیمات ذخیره شد";
+
 
 
 }
@@ -449,4 +529,98 @@ function saveSettings(){
 
 
 
-/*
+
+
+
+
+/* ===============================
+   داشبورد
+================================ */
+
+
+function loadDashboard(){
+
+
+let customers=getCustomers();
+
+
+
+let customerCount=
+
+document.getElementById("customerCount");
+
+
+
+if(customerCount){
+
+customerCount.innerHTML=
+
+customers.length.toLocaleString('fa-IR');
+
+}
+
+
+
+let calculateCount=
+
+document.getElementById("calculateCount");
+
+
+
+if(calculateCount){
+
+calculateCount.innerHTML=
+
+Number(
+localStorage.calculateCount || 0
+)
+.toLocaleString('fa-IR');
+
+}
+
+
+
+let lastLoan=
+
+document.getElementById("lastLoan");
+
+
+
+if(lastLoan){
+
+lastLoan.innerHTML=
+
+formatRial(
+localStorage.lastLoan || 0
+);
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+// اجرای اولیه
+
+
+window.addEventListener("load",()=>{
+
+
+enableNumberFormat("average");
+
+
+enableNumberFormat("customerAverage");
+
+
+
+showCustomers();
+
+
+
+});
