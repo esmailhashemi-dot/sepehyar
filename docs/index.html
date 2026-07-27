@@ -1,17 +1,104 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
-<title>سپه یار</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>سپه‌یار</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
+<header>
 <h1>سپه‌یار</h1>
+<p>دستیار هوشمند محاسبات تسهیلات</p>
+</header>
 
-<p>نسخه آزمایشی برنامه محاسبات تسهیلات</p>
 
-<p>طراح: اسماعیل هاشمی</p>
+<div class="container">
+
+
+<div class="card">
+
+<h2>📊 محاسبه معدل حساب</h2>
+
+<input id="total"
+placeholder="جمع موجودی روزانه (ریال)">
+
+
+<input id="days"
+placeholder="تعداد روز">
+
+
+<button onclick="average()">
+محاسبه معدل
+</button>
+
+
+<div id="avgResult" class="result"></div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>💰 محاسبه تسهیلات</h2>
+
+
+<input id="avg"
+placeholder="معدل حساب (ریال)">
+
+
+<input id="factor"
+value="3"
+placeholder="ضریب">
+
+
+<input id="months"
+value="36"
+placeholder="تعداد ماه">
+
+
+<button onclick="loan()">
+محاسبه وام
+</button>
+
+
+<div id="loanResult" class="result"></div>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h2>👤 درباره برنامه</h2>
+
+<p>
+سپه‌یار - نسخه آزمایشی
+</p>
+
+<p>
+طراح:
+<br>
+<b>اسماعیل هاشمی</b>
+</p>
+
+</div>
+
+
+
+</div>
+
+
+<script src="app.js"></script>
 
 </body>
+
 </html>
