@@ -1,13 +1,25 @@
 {
   "name": "سپه‌یار",
-  "short_name": "Sepehyar",
-  "description": "دستیار هوشمند محاسبات تسهیلات",
+  "short_name": "سپه‌یار",
+  "description": "دستیار هوشمند محاسبات تسهیلات و مدیریت مشتریان",
   "lang": "fa",
   "dir": "rtl",
-  "start_url": "index.html",
+
+  "start_url": "./index.html",
+
   "display": "standalone",
-  "background_color": "#f4f6fa",
+
+  "orientation": "portrait",
+
   "theme_color": "#12355b",
+
+  "background_color": "#f4f6fa",
+
+  "categories": [
+    "finance",
+    "business",
+    "productivity"
+  ],
 
   "icons": [
     {
